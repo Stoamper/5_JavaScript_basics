@@ -1,0 +1,33 @@
+Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+В зависимости от переданного значения операции выполнить одну из арифметических операций, используя функции из пункта 5, и вернуть полученное значение, используя switch.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	let a = Number(prompt('Введите первое число')) // Number для преобразования строки в число для правильного сложения
+	let b = Number(prompt('Введите второе число')) // Number для преобразования строки в число для правильного сложения
+	let operation = prompt('Введите название операции (сложение, вычитание, деление, умножение или один из символов +, -, *, /')
+
+	function mathOperation(arg1, arg2, operation) {
+		switch(operation) {
+			case 'сложение':
+				return (arg1 + arg2);
+			case '+':
+				return (arg1 + arg2);	
+			case 'вычитание':
+				return arg1 - arg2;
+			case '-':
+				return arg1 - arg2;
+			case 'деление':
+				return (arg1 / arg2).toFixed(2);
+			case '/':
+				return (arg1 / arg2).toFixed(2);	
+			case 'умножение':
+				return arg1 * arg2;
+			case '*':
+				return arg1 * arg2;
+		}
+	}
+	console.log(a, operation, b, '=', mathOperation(a, b, operation))
+
+</script>
