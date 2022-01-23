@@ -1,0 +1,13 @@
+(*) Сравнить null и 0 и своими словами объяснить результат.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	alert(null == 0) // false
+	alert(null === 0) // false
+
+</script>
+
+
+Значения null не равно значению 0. Оно равно только undefine. Это прописано в спецификации языка JavaScript.
+Однако при явном преобразовании null в число (то есть вызванном пользователем) оно принимает значение 0 (а undefined — NaN).

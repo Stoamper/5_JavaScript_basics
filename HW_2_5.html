@@ -1,0 +1,33 @@
+Реализовать основные арифметические операции: сложение, вычитание, умножение, деление.
+Сделать их в виде функций с двумя параметрами.
+Обязательно использовать оператор return.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	let a = Number(prompt('Введите первое число')) // Number для преобразования строки в число для правильного сложения
+	let b = Number(prompt('Введите второе число')) // Number для преобразования строки в число для правильного сложения
+
+	function addNumbers(a, b) {
+		return (a + b);
+	}
+
+	function diffNumbers(a, b) {
+		return (a - b);
+	}
+
+	function multNumbers(a, b) {
+		return (a * b);
+	}
+
+	function divNumbers(a, b) {
+		return (a / b);
+	}
+
+	console.log('Результат сложения чисел', a, b, 'равен', addNumbers(a, b));
+	console.log('Результат вычитания из числа', a, b, 'равен',diffNumbers(a,b));
+	console.log('Результат умножения чисел', a, b, 'равен', multNumbers(a,b));
+	console.log('Результат деления числа', a, 'на', b, 'равен',divNumbers(a,b).toFixed(2));
+
+
+</script>
