@@ -1,0 +1,44 @@
+1.	С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	// создаем первоначальный массив
+	var initial_array = [];
+	var n = 100; // длина массива
+
+	for (var i = 0; i < n; i++) {
+		initial_array.push(i);
+	}
+
+	// для работы используем промежуточный массив
+	inter_array = initial_array;
+
+	// находим в промежуточном массиве простые числа с помощью решета Эратосфена
+	inter_array[1] = 0; // число 1 не является простым, заменяем его на 0
+	var m = 2;
+	var j;
+
+	while (m < i) {
+		if (inter_array[m] != 0) {
+			j = m * 2;
+			while (j < i) {
+				inter_array[j] = 0;
+				j = j + m;
+			}
+		}
+		m++;
+	}
+
+	// формируем окончательный массив без лишних нулей
+	var final_array = [];
+	for (i = 0; i < n; i++) {
+		if (inter_array[i] != 0) {
+			final_array.push(inter_array[i]);
+		}
+
+	}
+
+	console.log('Простые числа в массиве от 0 до ' + n + ': ' + final_array);
+
+</script>

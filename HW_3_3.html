@@ -1,0 +1,46 @@
+3. Товары в корзине хранятся в массиве. Задачи:
+a) Организовать такой массив для хранения товаров в корзине;
+b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	// воспользуемся частью кода из задачи 2 (наполнение корзины)
+	var shopping_cart = [];
+	var name;
+	var price;
+
+	function countBasketPrice(user_arr) {
+		var sum_price = 0;
+		for (var i = 0; i < user_arr.length; i++) {
+			sum_price = sum_price + user_arr[i][1];
+		}
+		return sum_price;
+	}
+
+	while (true) {
+		// создаем переменную типа массив, которая будет хранить информацию о конкретном товаре (наименование и стоимость)
+		var goods = []
+
+		name = prompt('Введите наименование товара (для окончания ввода введите stop)');
+		if (name === 'stop') {
+			break;
+		}
+		price = Number(prompt('Введите стоимость  в рублях'));
+
+		// добавим проверку на валидность вводимых пользователем значений
+		if (isNaN(name) == false || isNaN(price) == true) {
+			alert('Вы ввели некорректные данные. Повторите ввод');
+			continue;
+		}
+
+		goods.push(name);
+		goods.push(price);
+		shopping_cart.push(goods);	
+	}
+
+	// вывод информации по составу корзины и суммарной стоимости товаров
+	console.log(shopping_cart);
+	console.log('Суммарная стоимость товаров в корзине ' + countBasketPrice(shopping_cart) + ' руб');
+
+</script>
