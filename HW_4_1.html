@@ -1,0 +1,40 @@
+Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {'единицы': 5, 'десятки': 4, 'сотни': 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function decomposeUserNumber(userNumber){
+		
+		// Создадим объект 
+		let decomposeNumber = {
+			hundreds: 0,
+			tens: 0,
+			units: 0,
+		}
+
+		// Выделение единиц, десяток и сотен из введенного пользователем числа
+		if (userNumber >= 0 && userNumber <= 999){
+			console.log('Вы ввели число ' + userNumber);
+			if (userNumber >= 0 && userNumber <= 9) {
+				decomposeNumber.units = userNumber;
+				console.log(decomposeNumber);
+			} else if (userNumber >= 10 && userNumber <= 99) {
+				decomposeNumber.units = userNumber % 10;
+				decomposeNumber.tens = (userNumber - decomposeNumber.units) / 10;
+				console.log(decomposeNumber);
+			} else {
+				decomposeNumber.units = userNumber % 10;
+				decomposeNumber.tens = ((userNumber - decomposeNumber.units) / 10) % 10;
+				decomposeNumber.hundreds = (((userNumber - decomposeNumber.units) / 10) - decomposeNumber.tens) / 10;
+				console.log(decomposeNumber);
+			}
+		} else {
+			console.log('Ваше число не входит в указанный диапазон. Объект остался пустой' + decomposeNumber)
+		}
+
+	}
+
+	let userNumber = Number(prompt('Введите целое число от 0 до 999'))
+	decomposeUserNumber(userNumber);
+	
+</script>
